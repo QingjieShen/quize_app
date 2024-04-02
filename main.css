@@ -1,0 +1,543 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* set default colors */
+:root {
+    --black-primary:#000;
+    --black-secondary: #1e1e1e;
+    --default-red: #e23939;
+    --default-green: #39e272;
+    --default-orange: #e27239;
+    --white-primary: #fff;
+    --white-secondary: #efefef;
+}
+
+h1 {
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.invisible {
+    display: none !important;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--black-primary);
+    color: var(--white-primary);
+}
+
+.wrapper {
+    margin: auto 2rem;
+}
+
+/* Welcome homepage part */
+.questionPage, .resultPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.welcomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.welcomeHeader {
+    margin-top: 5rem;
+} 
+
+.welcomeHeader p {
+    margin: 2rem auto;
+}
+
+.appName {
+    color: var(--default-green);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.quizzesSelector {
+    width: min(100%, 300px);
+    margin-top: 3rem;
+    /* position: fixed;
+    bottom: 20%; */
+}
+
+.quizzesSelector select {
+    width: min(100%, 300px);
+    height: 2rem;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 1rem;
+}
+.quizzesSelector label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.4rem;
+}
+
+.questionNum, .questionTime {
+    display: flex;
+    justify-content: space-between;
+}
+
+.questionNum p:nth-child(2), .questionTime p:nth-child(2) {
+    color: var(--default-orange);
+}
+
+.primBtn {
+    margin-top: 1rem;
+    width: 300px;
+    height: 2rem;
+    font-weight: bold;
+}
+
+.primBtn:hover {
+    cursor: pointer;
+}
+
+#beginBtn {
+    background-color: var(--default-green);
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 8rem;
+}
+
+#beginBtn:hover {
+    cursor: pointer;
+}
+
+/* Questions part */
+.questionIndex {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.questionIndex span {
+    color: var(--default-orange);
+}
+
+.questionTitle {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.correctAnswersNum {
+    /* width: 100%; */
+    text-align: left;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: rgb(219, 218, 218);
+}
+
+.questionAnswers p {
+    transition: all .2s ease-in-out;
+}
+
+.questionAnswers p:hover {
+    cursor: pointer;
+}
+
+.options {
+    background-color: var(--white-primary);
+    color: var(--black-primary);
+    /* width: 100%; */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: left;
+    padding: 10px;
+}
+
+.selected, .correct {
+    background-color: var(--default-green);
+}
+
+.timmer {
+    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    color: var(--default-orange);
+}
+
+.questionsOperation {
+    width: 100%;
+    margin-top: 5rem;
+    padding-bottom: 8rem;
+    /* position: fixed;
+    bottom: 20%; */
+}
+
+.quizzesBtns {
+    display: flex;
+    margin: auto 2rem;
+    justify-content: space-between;
+}
+
+.quizzesBtns button:hover {
+    cursor: pointer;
+}
+
+.quizzesBtns button {
+    width: 100px;
+    height: 2rem;
+}
+
+/* Result score part */
+.scoreTitle {
+    margin-top: 5rem;
+}
+
+.score {
+    font-size: 5rem;
+    margin: 1rem auto;
+    /* color: var(--default-green); */
+    font-weight: bold;
+}
+
+.quizeDetails {
+    width: 100%;
+}
+
+.totalQuestions, .correctAnswers, .grade {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.totalQuestions p:nth-child(2) {
+    color: var(--default-green);
+}
+
+.gradeA {
+    color: var(--default-green);
+}
+
+.gradeB {
+    color: var(--default-orange);
+}
+
+.gradeC {
+    color: var(--default-orange);
+}
+.gradeD {
+    color: var(--default-red);
+}
+
+.finishBtns {
+    /* width: 100%; */
+    position: fixed;
+    bottom: 20%;
+}
+
+.finishBtns {
+    cursor: pointer;
+}
+
+.roundBtn {
+    border-radius: 20px;
+    height: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.roundBtn:hover {
+    cursor: pointer;
+}
+
+#answerDetailBtn {
+    background-color: var(--white-secondary);
+    color: var(--black-primary);
+}
+
+#newChallengeBtn, #resultNewChallengeBtn {
+    background-color: var(--default-green);
+    color: var(--black-primary);
+}
+
+#homePageBtn, #resultHomePageBtn, .waitingPageHomeBtn {
+    background-color: var(--default-orange);
+    color: var(--white-secondary);
+}
+
+#homePageBtn:hover, #resultHomePageBtn:hover, .waitingPageHomeBtn:hover {
+    cursor: pointer;
+}
+
+.waitingPageHomeBtn {
+    margin-top: 5rem;
+    width: min(100%, 400px);
+}
+
+/* answer details page */
+.quizeExplaination {
+    text-align: center;
+}
+
+.answerDetailsPage h2 {
+    width: 100%;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.wrong {
+    background-color: var(--default-red);
+    color: var(--white-secondary);
+}
+
+.userSelected::after {
+    content: "(Your Selection)";
+    color: var(--white-primary);
+    /* -webkit-text-stroke: 1px black; */
+    /* text-shadow: 1px 2px 3px black; */
+    background-color: rgb(63, 63, 63);
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.question {
+    margin-bottom: 1.5rem;
+}
+
+.questionTitle {
+    margin-bottom: 0.8rem;
+}
+
+.questionAnswers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.returnBtns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 2rem;
+}
+
+.returnBtns:hover {
+    cursor: pointer;
+}
+
+/* Waiting page */
+.waiting {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: auto 2rem;
+    font-size: 1.8rem;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* footer part */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid var(--white-secondary);
+    text-align: center;
+    z-index: 1;
+    background-color: rgb(11, 11, 11);
+    box-shadow: 0px -10px 10px rgba(89, 89, 89, 0.28);
+}
+
+footer p:nth-child(1) {
+    margin-top: 0.8rem;
+}
+
+footer p:nth-child(2) {
+    margin-bottom: 0.8rem;
+}
+
+footer p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+footer a {
+    color: var(--white-primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Tablet divice */
+@media screen and (min-width: 768px) {
+    /* home page resizing */
+    .quizzesSelector {
+        width: min(100%, 600px);
+    }
+    
+    .quizzesSelector select {
+        width: min(100%, 600px);
+        height: 2rem;
+        height: 40px;
+    }
+
+    .questionNum {
+        margin-top: 0.5rem;
+    }
+    
+    #beginBtn {
+        width: 400px;
+        height: 40px;
+        margin-top: 5rem;
+    }
+
+    /* question page resizing */
+    .primBtn {
+        width: 600px;
+    }
+
+    .questionIndex {
+        margin-top: 5rem;
+    }
+
+    .quizzesBtns {
+        margin: auto 5rem;
+    }
+    
+    .quizzesBtns button {
+        width: 200px;
+        height: 40px;
+    }
+    
+    .timmer {
+        margin-bottom: 2rem;
+        font-size: 5rem;
+    }
+
+    /* result page resizing */
+    .quizeDetails {
+        width: 600px;
+        margin-top: 2rem;
+    }
+
+    /* footer sizing */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer p {
+        width: calc(50% - 40px);
+        margin: 0.8rem auto;
+        text-align: right;
+    }
+
+    footer p:nth-child(1) {
+        text-align: start;
+    }
+}
+
+/* desktop devices */
+@media screen and (min-width: 992px) {
+    /* question page resizing */
+    .questionAnswers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* result page resizing */
+    .finishBtns {
+        display: flex;
+        gap: 40px;
+    }
+
+    #answerDetailBtn, #resultNewChallengeBtn, #resultHomePageBtn {
+        width: 280px;
+    }
+
+    /* answer details page resizing */
+    .returnBtns {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    #newChallengeBtn, #homePageBtn {
+        width: 300px;
+    }
+}

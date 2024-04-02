@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Quize App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="welcomePage" class="welcomePage invisible">
+            <div class="welcomeHeader">
+                <h1>Elevate Your Interview Skills</h1>
+                <p>with</p>
+                <h2 class="appName">Insightful Quizzes</h2>
+            </div>
+            <div class="quizzesSelector">
+                <div class="quize-type-selection">
+                    <label for="quizzes">Please select the quize type</label>
+                    <select name="quizzes" id="quizzes" required>
+                        <option value="">Any Category</option>
+                        <option value="linux">Linux</option>
+                        <option value="bash">Bash</option>
+                        <option value="uncategorized">Uncategorized</option>
+                        <option value="docker">Docker</option>
+                        <option value="sql">SQL</option>
+                        <option value="cms">CMS</option>
+                        <option value="code">Code</option>
+                        <option value="devops">Devops</option>
+                    </select>
+                </div>
+                <div class="quize-difficulity-selection">
+                    <label for="quizeDifficulty">Please select difficulty</label>
+                    <select name="quizeDifficulty" id="quizeDifficulty" required>
+                        <option value="">Any difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="quize-number-selection">
+                    <label for="quizeNum">Please select quizzes nummber</label>
+                    <select name="quizeNum" id="quizeNum" required>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="quize-tags-selection">
+                    <label for="tags">Please select quize type</label>
+                    <select name="tags" id="tags" required>
+                        <option value="">Any tags</option>
+                        <option value="bash">BASH</option>
+                        <option value="devops">DevOps</option>
+                        <option value="docker">Docker</option>
+                        <option value="html">HTML</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="kubernetes">Kubernetes</option>
+                        <option value="laravel">Laravel</option>
+                        <option value="linux">Linux</option>
+                        <option value="mysql">MySQL</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="wordpress">WordPress</option>
+                    </select>
+                </div>
+                <div class="questionTime">
+                    <p>Time limit</p>
+                    <p id="timeLimit">5 mins</p>
+                </div>
+                <button class="primBtn" id="beginBtn">Begin Challenge</button>
+            </div>
+        </div>
+        <div id="questionPage" class="questionPage invisible">
+            <h2 class="questionIndex">Question: <span id="questionIndex">1/10</span></h2>
+            <p class="questionTitle" id="questionTitle">Inside which HTML element do we put the JavaScript?</p>
+            <p class="correctAnswersNum" id="correctAnswerNum">(Correct Answer Num: 1)</p>
+            <div class="questionAnswers" id="questionChoices">
+
+            </div>
+            <div class="questionsOperation">
+                <div class="timmer" id="timmer">
+                    0:00
+                 </div>
+                 <div class="quizzesBtns">
+                     <button id="previousBtn" class="previous">Quit</button>
+                     <button id="nextBtn" class="next">Next &gt;</button>
+                 </div>
+            </div>
+        </div>
+        <div id="resultPage" class="resultPage invisible">
+            <p class="scoreTitle">Your score:</p>
+            <div class="score" id="score">
+                100%
+            </div>
+            <div class="quizeDetails">
+                <div class="totalQuestions">
+                    <p>Total questions:</p>
+                    <p id="totalQuestions">10</p>
+                </div>
+                <div class="correctAnswers">
+                    <p>Correct answers:</p>
+                    <p id="correctAnswersNum">10</p>
+                </div>
+                <div class="grade">
+                    <p>Grade:</p>
+                    <p id="grade">A+</p>
+                </div>
+            </div>
+            <div class="finishBtns">
+                <button id="answerDetailBtn" class="roundBtn primBtn">Answer details</button>
+                <button id="resultNewChallengeBtn" class="roundBtn primBtn">New challenge</button>
+                <button id="resultHomePageBtn" class="roundBtn primBtn">Home page</button>
+            </div>
+        </div>
+        <div id="answerDetailsPage" class="answerDetailsPage ">
+            <h2>Answer Details</h2>
+            <div class="quizeExplaination" id="quizeExplaination">
+
+            </div>
+            <div class="returnBtns">
+                <button id="newChallengeBtn" class="roundBtn primBtn">New challenge</button>
+                <button id="homePageBtn" class="roundBtn primBtn">Home page</button>
+            </div>
+        </div>
+        <div class="waiting" id="waiting">
+            
+        </div>
+        
+    </div>
+    <footer>
+        <p>Quizzes are from <a href="https://quizapi.io/docs/1.0/overview">quizeAPI</a></p>
+        <p>Created by Qingjie Shen</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

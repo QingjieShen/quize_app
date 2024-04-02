@@ -51,7 +51,7 @@ let urlQuizeNum = '&limit=5'
 let urlTags = ''
 let quizzesData = []
 let currentQuestionIndex = 0; // represents current question index
-let totalTime = 299 // set the default time (300 seconds, which means 5 minutes)
+let totalTime = 149 // set the default time (150 seconds, which means 2.5 minutes)
 let timePassedBy = 0
 let countDown = null //declare the coundDown function to be a gloable variable
 
@@ -69,8 +69,8 @@ if (localStorage.getItem('quizeDifficulty')) {
 if (localStorage.getItem('quizeNum')) {
     quizeNum.value = localStorage.getItem('quizeNum')
     urlQuizeNum = `&limit=${quizeNum.value}`
-    timeLimit.textContent = `${quizeNum.value} mins`
-    totalTime = quizeNum.value * 60 - 1 //initialize timmer
+    timeLimit.textContent = `${quizeNum.value / 2} mins`
+    totalTime = quizeNum.value * 30 - 1 //initialize timmer
 }
 
 if (localStorage.getItem('quizeTags')) {
@@ -91,9 +91,9 @@ quizeDifficulty.addEventListener('change', () => {
 
 quizeNum.addEventListener('change', () => {
     urlQuizeNum = `&limit=${quizeNum.value}`
-    timeLimit.textContent = `${quizeNum.value} mins`
+    timeLimit.textContent = `${quizeNum.value / 2} mins`
     localStorage.setItem('quizeNum', quizeNum.value) //updates local data
-    totalTime = quizeNum.value * 60 - 1 //updates timmer
+    totalTime = quizeNum.value * 30 - 1 //updates timmer
 })
 
 quizeTags.addEventListener('change', () => {

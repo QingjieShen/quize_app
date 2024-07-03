@@ -1,5 +1,5 @@
 # Brief Introduction
-- This is an app Javascript that can help you test your computer programing knowledge. All questions are from [quizapi.io](https://quizapi.io/)
+- This is an app that can help you test your computer programing knowledge. All questions are from [quizapi.io](https://quizapi.io/)
 - Please click: [Insightful Quizzes](https://qingjieshen.github.io/quize_app/) to see the demo.
 
 # The main features of this app:
